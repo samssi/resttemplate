@@ -15,8 +15,9 @@ public class ExampleResource {
     private ExampleService exampleService;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getExampleClass() {
-        return exampleService.fetchExampleClass().toString();
+    @Path("example")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ExampleClass getExampleClass() {
+        return exampleService.fetchExampleClass();
     }
 }
