@@ -29,6 +29,7 @@ public class ExampleResourceConfig extends ResourceConfig {
         register(GsonWriter.class);
         register(new DevelopmentBinder());
         register(new ApplicationLifecycleListener());
+        register(new CORSResponseFilter());
     }
 
     public void registerSwagger() {
