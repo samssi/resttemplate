@@ -1,6 +1,6 @@
 package fi.samssi.resttemplate.server;
 
-import fi.samssi.resttemplate.di.ExampleApplication;
+import fi.samssi.resttemplate.di.ExampleResourceConfig;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -14,9 +14,9 @@ public class TestServer {
             servletContextHandler.setContextPath("/");
             server.setHandler(servletContextHandler);
 
-            ServletHolder servletHolder = new ServletHolder(new org.glassfish.jersey.servlet.ServletContainer(new ExampleApplication()));
-            servletHolder.setInitOrder(0);
-            servletContextHandler.addServlet(servletHolder, "/rest/*");
+            ServletHolder jerseyServletHolder = new ServletHolder(new org.glassfish.jersey.servlet.ServletContainer(new ExampleResourceConfig()));
+            jerseyServletHolder.setInitOrder(0);
+            servletContextHandler.addServlet(jerseyServletHolder, "/rest/*");
 
             start();
         }
