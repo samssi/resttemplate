@@ -8,8 +8,8 @@ public class PropertyBasedBeanConfig extends BeanConfig {
     private static String[] SCHEMES = new String[] {"http"};
     private static String HOST = "localhost:8080";
     private static String BASE_PATH = "/rest";
-    private static String RESOURCE_PACKAGE = "io.swagger.resources";
-    private static boolean CLASS_SCAN = false;
+    private static String RESOURCE_PACKAGE = "fi.samssi.resttemplate.resource";
+    private static boolean CLASS_SCAN = true;
 
     public PropertyBasedBeanConfig() {
         setVersion(VERSION);
