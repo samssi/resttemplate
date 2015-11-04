@@ -9,6 +9,7 @@ public class ApplicationLifecycleListener implements ContainerLifecycleListener 
 
     public void onStartup(Container container) {
         serviceLocator = container.getApplicationHandler().getServiceLocator();
+        new PropertyBasedBeanConfig();
     }
 
     public void onReload(Container container) {

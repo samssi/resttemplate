@@ -8,5 +8,6 @@ public class DevelopmentModule extends AbstractBinder {
     @Override
     protected void configure() {
         bind(ExampleServiceDevelopmentImplementation.class).to(ExampleService.class);
+        bind(DevelopmentApplicationProperties.class).to(ApplicationProperties.class);
     }
 }

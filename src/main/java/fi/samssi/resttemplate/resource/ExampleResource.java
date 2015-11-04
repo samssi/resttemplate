@@ -1,5 +1,7 @@
 package fi.samssi.resttemplate.resource;
 
+import fi.samssi.resttemplate.di.ApplicationProperties;
+import fi.samssi.resttemplate.di.DevelopmentApplicationProperties;
 import fi.samssi.resttemplate.domain.ExampleClass;
 import fi.samssi.resttemplate.service.ExampleService;
 import io.swagger.annotations.Api;

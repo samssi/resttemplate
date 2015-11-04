@@ -21,10 +21,6 @@ public class ExampleResourceConfig extends ResourceConfig {
         registerSwagger();
     }
 
-    public void registerResources() {
-        register(ExampleResource.class);
-    }
-
     public void registerApplicationComponents() {
         register(GsonWriter.class);
         register(new DevelopmentBinder());
@@ -32,9 +28,13 @@ public class ExampleResourceConfig extends ResourceConfig {
         register(new CORSResponseFilter());
     }
 
-    public void registerSwagger() {
-        new PropertyBasedBeanConfig();
+    public void registerResources() {
+        register(ExampleResource.class);
+    }
 
+
+
+    public void registerSwagger() {
         register(ApiListingResource.class);
         register(SwaggerSerializers.class);
     }
