@@ -12,7 +12,7 @@ public class PropertyBasedBeanConfig extends BeanConfig {
     public PropertyBasedBeanConfig() {
         ServiceLocatorHolder.injectMembers(this);
         setVersion(applicationProperties.config().getString("swagger.version"));
-        String schemes[] = asArray(applicationProperties.config().getStringList("swagger.schemes"));
+        String schemes[] = {"http"};//asArray(applicationProperties.config().getStringList("swagger.schemes"));
         setSchemes(schemes);
         setHost(applicationProperties.config().getString("swagger.host"));
         setBasePath(applicationProperties.config().getString("swagger.basepath"));

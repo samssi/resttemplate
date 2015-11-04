@@ -15,15 +15,15 @@ import javax.ws.rs.ApplicationPath;
 
 @ApplicationPath("/")
 public class ExampleResourceConfig extends ResourceConfig {
-    public ExampleResourceConfig() {
-        registerApplicationComponents();
+    public ExampleResourceConfig(Context context) {
+        registerApplicationComponents(context);
         registerResources();
         registerSwagger();
     }
 
-    public void registerApplicationComponents() {
+    public void registerApplicationComponents(Context context) {
         register(GsonWriter.class);
-        register(new DevelopmentBinder());
+        register(context.binder());
         register(new ApplicationLifecycleListener());
         register(new CORSResponseFilter());
     }
