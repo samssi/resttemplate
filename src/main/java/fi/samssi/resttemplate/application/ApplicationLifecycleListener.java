@@ -1,5 +1,6 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application;
 
+import fi.samssi.resttemplate.application.config.PropertyBasedBeanConfig;
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.server.spi.Container;
 import org.glassfish.jersey.server.spi.ContainerLifecycleListener;

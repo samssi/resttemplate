@@ -1,4 +1,4 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;

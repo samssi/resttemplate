@@ -1,5 +1,6 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application;
 
+import fi.samssi.resttemplate.application.ApplicationLifecycleListener;
 import org.glassfish.hk2.api.ServiceLocator;
 
 public class ServiceLocatorHolder {

@@ -1,5 +1,7 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application.config;
 
+import fi.samssi.resttemplate.application.ServiceLocatorHolder;
+import fi.samssi.resttemplate.application.property.ApplicationProperties;
 import io.swagger.jaxrs.config.BeanConfig;
 
 import javax.inject.Inject;

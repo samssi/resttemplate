@@ -1,4 +1,4 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application.di;
 
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 

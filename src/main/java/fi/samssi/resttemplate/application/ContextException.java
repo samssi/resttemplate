@@ -1,4 +1,4 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application;
 
 public class ContextException extends RuntimeException {
     public ContextException(String message) {

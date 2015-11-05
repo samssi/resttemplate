@@ -1,4 +1,4 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application.property;
 
 import com.typesafe.config.Config;
 

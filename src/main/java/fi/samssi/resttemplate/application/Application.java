@@ -1,21 +1,19 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application;
 
+import fi.samssi.resttemplate.application.ApplicationLifecycleListener;
+import fi.samssi.resttemplate.application.Context;
+import fi.samssi.resttemplate.filter.CORSResponseFilter;
 import fi.samssi.resttemplate.resource.ExampleResource;
 import fi.samssi.resttemplate.util.GsonWriter;
-import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
-import io.swagger.jersey.listing.ApiListingResourceJSON;
-import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.jersey.server.spi.Container;
-import org.glassfish.jersey.server.spi.ContainerLifecycleListener;
 
 import javax.ws.rs.ApplicationPath;
 
 @ApplicationPath("/")
-public class ExampleResourceConfig extends ResourceConfig {
-    public ExampleResourceConfig(Context context) {
+public class Application extends ResourceConfig {
+    public Application(Context context) {
         registerApplicationComponents(context);
         registerResources();
         registerSwagger();

@@ -1,5 +1,7 @@
-package fi.samssi.resttemplate.di;
+package fi.samssi.resttemplate.application;
 
+import fi.samssi.resttemplate.application.di.DevelopmentBinder;
+import fi.samssi.resttemplate.application.di.TestBinder;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 
 import static com.google.common.base.Strings.isNullOrEmpty;
