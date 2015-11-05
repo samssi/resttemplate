@@ -13,30 +13,30 @@ public class TestServer {
 
     public static class DevContext {
         public static void main(String... args) {
-            ServletContextHandler servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-            servletContextHandler.setContextPath("/");
-            server.setHandler(servletContextHandler);
-
             ServletHolder jerseyServletHolder = new ServletHolder(new org.glassfish.jersey.servlet.ServletContainer(new Application(DEV)));
-            jerseyServletHolder.setInitOrder(0);
-            servletContextHandler.addServlet(jerseyServletHolder, "/rest/*");
-
+            assignServlet(jerseyServletHolder);
             start();
         }
     }
 
     public static class TestContext {
         public static void main(String... args) {
-            ServletContextHandler servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-            servletContextHandler.setContextPath("/");
-            server.setHandler(servletContextHandler);
-
             ServletHolder jerseyServletHolder = new ServletHolder(new org.glassfish.jersey.servlet.ServletContainer(new Application(TEST)));
-            jerseyServletHolder.setInitOrder(0);
-            servletContextHandler.addServlet(jerseyServletHolder, "/rest/*");
-
+            assignServlet(jerseyServletHolder);
             start();
         }
+    }
+
+    public static void assignServlet(ServletHolder servletHolder) {
+        servletHolder.setInitOrder(0);
+        servletContextHandler().addServlet(servletHolder, "/rest/*");
+    }
+
+    public static ServletContextHandler servletContextHandler() {
+        ServletContextHandler servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        servletContextHandler.setContextPath("/");
+        server.setHandler(servletContextHandler);
+        return servletContextHandler;
     }
 
     public static void start() {
