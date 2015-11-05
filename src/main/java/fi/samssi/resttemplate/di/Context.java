@@ -14,7 +14,7 @@ public enum Context {
     TEST("test") {
         @Override
         public AbstractBinder binder() {
-            throw new RuntimeException("Test context not implemented yet.");
+            return new TestBinder();
         }
     },
     PRODUCTION("production") {
