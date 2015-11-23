@@ -3,8 +3,8 @@ package fi.samssi.resttemplate.application;
 import java.util.Optional;
 
 public class ContextSelector {
-    public static Context getSystemPropertyOverridableContext(Context context) {
-        return getOverrideSystemContextProperty().orElse(context);
+    public static Context getSystemPropertyOverridableContext() {
+        return getOverrideSystemContextProperty().orElseThrow(() -> new ContextException("Context selection failed! Context not defined!"));
     }
 
     private static Optional<Context> getOverrideSystemContextProperty() {
