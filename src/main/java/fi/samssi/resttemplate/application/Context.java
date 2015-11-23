@@ -28,7 +28,7 @@ public enum Context {
 
     private final String contextParam;
 
-    Context(String contextParam) {
+    Context(final String contextParam) {
         this.contextParam = contextParam;
     }
 

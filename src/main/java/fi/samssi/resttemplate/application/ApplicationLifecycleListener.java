@@ -8,16 +8,16 @@ import org.glassfish.jersey.server.spi.ContainerLifecycleListener;
 public class ApplicationLifecycleListener implements ContainerLifecycleListener {
     public static ServiceLocator serviceLocator;
 
-    public void onStartup(Container container) {
+    public void onStartup(final Container container) {
         serviceLocator = container.getApplicationHandler().getServiceLocator();
         new PropertyBasedBeanConfig();
     }
 
-    public void onReload(Container container) {
+    public void onReload(final Container container) {
 
     }
 
-    public void onShutdown(Container container) {
+    public void onShutdown(final Container container) {
 
     }
 }

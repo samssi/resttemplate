@@ -1,7 +1,5 @@
 package fi.samssi.resttemplate.application;
 
-import fi.samssi.resttemplate.application.ApplicationLifecycleListener;
-import fi.samssi.resttemplate.application.Context;
 import fi.samssi.resttemplate.filter.CORSResponseFilter;
 import fi.samssi.resttemplate.resource.ExampleResource;
 import fi.samssi.resttemplate.util.GsonWriter;
@@ -13,13 +11,13 @@ import javax.ws.rs.ApplicationPath;
 
 @ApplicationPath("/")
 public class Application extends ResourceConfig {
-    public Application(Context context) {
+    public Application(final Context context) {
         registerApplicationComponents(context);
         registerResources();
         registerSwagger();
     }
 
-    public void registerApplicationComponents(Context context) {
+    public void registerApplicationComponents(final Context context) {
         register(GsonWriter.class);
         register(context.binder());
         register(new ApplicationLifecycleListener());

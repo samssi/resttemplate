@@ -18,8 +18,8 @@ import java.lang.reflect.Type;
 public class GsonWriter<T> implements MessageBodyWriter<T> {
     @Override
     public void writeTo(T t, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException, WebApplicationException {
-        Gson g = new Gson();
-        entityStream.write(g.toJson(t).getBytes("UTF-8"));
+        final Gson gson = new Gson();
+        entityStream.write(gson.toJson(t).getBytes("UTF-8"));
     }
 
     public long getSize(T t, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {

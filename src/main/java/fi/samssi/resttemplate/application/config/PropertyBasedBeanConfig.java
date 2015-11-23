@@ -14,7 +14,7 @@ public class PropertyBasedBeanConfig extends BeanConfig {
     public PropertyBasedBeanConfig() {
         ServiceLocatorHolder.injectMembers(this);
         setVersion(applicationProperties.config().getString("swagger.version"));
-        String schemes[] = asArray(applicationProperties.config().getStringList("swagger.schemes"));
+        final String schemes[] = asArray(applicationProperties.config().getStringList("swagger.schemes"));
         setSchemes(schemes);
         setHost(applicationProperties.config().getString("swagger.host"));
         setBasePath(applicationProperties.config().getString("swagger.basepath"));
@@ -22,7 +22,7 @@ public class PropertyBasedBeanConfig extends BeanConfig {
         setScan(applicationProperties.config().getBoolean("swagger.classscan"));
     }
 
-    private String[] asArray(List<String> array) {
+    private String[] asArray(final List<String> array) {
         return array.stream().toArray(String[]::new);
     }
 

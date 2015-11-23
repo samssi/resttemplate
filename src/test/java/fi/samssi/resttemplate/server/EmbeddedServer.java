@@ -18,24 +18,24 @@ public class EmbeddedServer {
    private static final Server server = new Server(8080);
 
     public static class DevContext {
-        public static void main(String... args) {
+        public static void main(final String... args) {
             CustomContext.startServer(DEV);
         }
     }
 
     public static class TestContext {
-        public static void main(String... args) {
+        public static void main(final String... args) {
             CustomContext.startServer(TEST);
         }
     }
 
     public static class CustomContext {
-        public static void main(String... args) {
+        public static void main(final String... args) {
             Context context = ContextSelector.getSystemPropertyOverridableContext();
             startServer(context);
         }
 
-        public static void startServer(Context context) {
+        public static void startServer(final Context context) {
             setupLogger();
             ServletHolder jerseyServletHolder = new ServletHolder(new org.glassfish.jersey.servlet.ServletContainer(new Application(context)));
             assignServlet(jerseyServletHolder);
@@ -44,17 +44,17 @@ public class EmbeddedServer {
     }
 
     public static void setupLogger() {
-        Logger rootLogger = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+        final Logger rootLogger = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         rootLogger.setLevel(Level.INFO);
     }
 
-    public static void assignServlet(ServletHolder servletHolder) {
+    public static void assignServlet(final ServletHolder servletHolder) {
         servletHolder.setInitOrder(0);
         servletContextHandler().addServlet(servletHolder, "/rest/*");
     }
 
     public static ServletContextHandler servletContextHandler() {
-        ServletContextHandler servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        final ServletContextHandler servletContextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
         servletContextHandler.setContextPath("/");
         server.setHandler(servletContextHandler);
         return servletContextHandler;

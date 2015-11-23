@@ -7,7 +7,7 @@ import javax.ws.rs.core.MultivaluedMap;
 import java.io.IOException;
 
 public class CORSResponseFilter implements ContainerResponseFilter {
-    public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
+    public void filter(final ContainerRequestContext requestContext, final ContainerResponseContext responseContext) throws IOException {
         MultivaluedMap<String, Object> headers = responseContext.getHeaders();
         headers.add("Access-Control-Allow-Origin", "*");
         headers.add("Access-Control-Allow-Methods", "GET, POST, PUT");

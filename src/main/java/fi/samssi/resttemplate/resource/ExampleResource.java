@@ -21,7 +21,7 @@ public class ExampleResource {
     @GET
     @Path("example")
     @ApiOperation(value = "Returns example object",
-                    response = ExampleClass.class)
+                  response = ExampleClass.class)
     @Produces(MediaType.APPLICATION_JSON)
     public ExampleClass getExampleClass() {
         return exampleService.fetchExampleClass();
